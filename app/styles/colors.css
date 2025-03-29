@@ -1,36 +1,36 @@
 :root {
-  --background: #C7DCE6;
-  --foreground: #E3EDF2;
-  --background-text: #161F27;
-  --foreground-text: #33475C;
-}
-
-.night_mode {
   --background: #f2f2fa;
   --foreground: #f2f2fa;
   --background-text: #f2f2fa;
   --foreground-text: #f2f2fa;
 }
 
+.night_mode {
+  --background: #161F27;
+  --foreground: #33475C;
+  --background-text: #C7DCE6;
+  --foreground-text: #E3EDF2;
+}
+
 .sunny_mode {
-  --background: #f2f2fa;
+  --background: #FAEEC7;
   --foreground: #f2f2fa;
   --background-text: #f2f2fa;
   --foreground-text: #f2f2fa;
 }
 
 .cloudy_mode {
-  --background: #f2f2fa;
-  --foreground: #f2f2fa;
-  --background-text: #f2f2fa;
-  --foreground-text: #f2f2fa;
+  --background: #C7DCE6;
+  --foreground: #E3EDF2;
+  --background-text: #161F27;
+  --foreground-text: #33475C;
 }
 
 .rainy_mode {
-  --background: #f2f2fa;
-  --foreground: #f2f2fa;
-  --background-text: #f2f2fa;
-  --foreground-text: #f2f2fa;
+  --background: #C7DCE6;
+  --foreground: #E3EDF2;
+  --background-text: #161F27;
+  --foreground-text: #33475C;
 }
 
 .freezing_mode {
