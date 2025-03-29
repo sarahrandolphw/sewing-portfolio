@@ -25,47 +25,47 @@ class WeatherService {
             console.log("API data:", data);
   
             if (data.current_weather) {
-              const condition = this.getWeatherCondition(data.current_weather.weathercode);
-              const isDay = data.current_weather.is_day;
-              this.applyWeatherCondition(condition, isDay);
+                const isDay = data.current_weather.is_day;
+                const condition = this.getWeatherCondition(data.current_weather.weathercode, isDay);
+                this.applyWeatherCondition(condition);
+                console.log("condition: ", condition);
             } else {
-              console.error("No weather data found in the response.");
+                console.error("No weather data found in the response.");
             }
           } catch (e) {
             console.error("Error fetching weather data:", e);
           }
         }, (error) => {  // <-- Also use arrow function here
-          console.log('Geolocation error:', error);
+            console.log('Geolocation error:', error);
         });
       } else {
         console.log("Geolocation not supported, using default color palette");
       }
     }
   
-    getWeatherCondition(code) {
-      if ([0].includes(code)) return 'sunny';
-      if ([1, 2, 3, 45, 48].includes(code)) return 'cloudy';
-      if ([51, 53, 55, 56, 57, 61, 63, 65, 71, 73, 75, 77, 80, 81, 82].includes(code)) return 'rainy';
-      if ([56, 57, 77].includes(code)) return 'freezing';
-      return 'unknown';
+    getWeatherCondition(code, is_day) {
+        if (!is_day) return 'night';
+        if ([0].includes(code)) return 'sunny';
+        if ([1, 2, 3, 45, 48].includes(code)) return 'cloudy';
+        if ([51, 53, 55, 56, 57, 61, 63, 65, 71, 73, 75, 77, 80, 81, 82].includes(code)) return 'rainy';
+        if ([56, 57, 77].includes(code)) return 'freezing';
+        return 'unknown';
     }
   
-    applyWeatherCondition(condition, isDay = true) {
-      document.body.classList.remove('night-mode', 'sunny_mode', 'cloudy_mode', 'rainy_mode', 'freezing_mode');
+    applyWeatherCondition(condition) {
+        document.body.classList.remove('night-mode', 'sunny-mode', 'cloudy-mode', 'rainy-mode', 'freezing-mode');
   
-      if (isDay) {
-        if (condition === 'sunny') {
-          document.body.classList.add('sunny_mode');
+        if (condition === 'night'){
+            document.body.classList.add('night-mode');
+        } else if (condition === 'sunny') {
+            document.body.classList.add('sunny-mode');
         } else if (condition === 'cloudy') {
-          document.body.classList.add('cloudy_mode');
+            document.body.classList.add('cloudy-mode');
         } else if (condition === "rainy") {
-          document.body.classList.add('rainy_mode');
+            document.body.classList.add('rainy-mode');
         } else if (condition === "freezing") {
-          document.body.classList.add('freezing_mode');
+            document.body.classList.add('freezing-mode');
         }
-      } else {
-        document.body.classList.add('night-mode');
-      }
     }
   }
   

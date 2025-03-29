@@ -1,39 +1,39 @@
 :root {
-  --background: #f2f2fa;
+  --background: #FCF4D9;
   --foreground: #f2f2fa;
-  --background-text: #f2f2fa;
-  --foreground-text: #f2f2fa;
+  --background-text: #092A48;
+  --foreground-text: #DD7596;
 }
 
-.night_mode {
+.night-mode {
   --background: #161F27;
   --foreground: #33475C;
-  --background-text: #C7DCE6;
-  --foreground-text: #E3EDF2;
+  --background-text: #CFE1F2;
+  --foreground-text: #F2F2FA;
 }
 
-.sunny_mode {
-  --background: #FAEEC7;
+.sunny-mode {
+  --background: #FCF4D9;
   --foreground: #f2f2fa;
-  --background-text: #f2f2fa;
-  --foreground-text: #f2f2fa;
+  --background-text: #092A48;
+  --foreground-text: #DD7596;
 }
 
-.cloudy_mode {
+.cloudy-mode {
+  --background: #CFE1F2;
+  --foreground: #F2F2FA;
+  --background-text: #092A48;
+  --foreground-text: #729B79;
+}
+
+.rainy-mode {
   --background: #C7DCE6;
   --foreground: #E3EDF2;
-  --background-text: #161F27;
+  --background-text: #092A48;
   --foreground-text: #33475C;
 }
 
-.rainy_mode {
-  --background: #C7DCE6;
-  --foreground: #E3EDF2;
-  --background-text: #161F27;
-  --foreground-text: #33475C;
-}
-
-.freezing_mode {
+.freezing-mode {
   --background: #C7DCE6;
   --foreground: #E3EDF2;
   --background-text: #161F27;
