@@ -134,8 +134,9 @@ p, h1, h2, h3, h4, h5, h6, span, div, a {
   }
 }
 
-.fa-instagram{
+.fa{
   color: var(--dark-text);
   text-decoration: none;
   cursor: hand;
+  padding: .4%;
 }
