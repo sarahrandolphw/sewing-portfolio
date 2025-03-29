@@ -10,7 +10,7 @@ body {
   font-family: Arial, sans-serif;
   color: var(--dark-text);
 }
-p, h1, h2, h3, h4, h5, h6, span, div {
+p, h1, h2, h3, h4, h5, h6, span, div, a {
   color: var(--dark-text);
 }
 
