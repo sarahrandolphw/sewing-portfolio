@@ -1,0 +1,41 @@
+:root {
+  --background: #C7DCE6;
+  --foreground: #E3EDF2;
+  --background-text: #161F27;
+  --foreground-text: #33475C;
+}
+
+.night_mode {
+  --background: #f2f2fa;
+  --foreground: #f2f2fa;
+  --background-text: #f2f2fa;
+  --foreground-text: #f2f2fa;
+}
+
+.sunny_mode {
+  --background: #f2f2fa;
+  --foreground: #f2f2fa;
+  --background-text: #f2f2fa;
+  --foreground-text: #f2f2fa;
+}
+
+.cloudy_mode {
+  --background: #f2f2fa;
+  --foreground: #f2f2fa;
+  --background-text: #f2f2fa;
+  --foreground-text: #f2f2fa;
+}
+
+.rainy_mode {
+  --background: #f2f2fa;
+  --foreground: #f2f2fa;
+  --background-text: #f2f2fa;
+  --foreground-text: #f2f2fa;
+}
+
+.freezing_mode {
+  --background: #C7DCE6;
+  --foreground: #E3EDF2;
+  --background-text: #161F27;
+  --foreground-text: #33475C;
+}

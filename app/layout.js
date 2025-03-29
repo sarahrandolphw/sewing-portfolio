@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Script from 'next/script';
-import './globals.css'
+import './styles/globals.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function RootLayout({ children }) {
@@ -18,7 +18,6 @@ export default function RootLayout({ children }) {
         <link
           rel="globals"
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-          integrity="sha384-KyZXEJ03vNEXpP7I6yM5Zl6WlFa4v2+6g9K6Z3l52KNp5pPjRfJz59l/Dz9m0g7N"
           crossOrigin="anonymous"
         />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
@@ -35,7 +34,6 @@ export default function RootLayout({ children }) {
         </div>
         <Script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-pzjw8f+ua7Kw1TIq0Ywv68a4akS9ZyXtv9sMlVqtW8Fz0TZnkOWO8aDX4Xz7J9fX"
           crossOrigin="anonymous"
           strategy="beforeInteractive"
         />
@@ -65,15 +63,13 @@ async function getWeather() {
                   const conditionCode = data.current_weather.weathercode;
                   const isDay = data.current_weather.is_day;
 
-                  console.log("Temperature:", temperature);
-                  console.log("Weather condition code:", conditionCode);
                   if (isDay){
                     document.body.classList.remove('night-mode');
                   } else {
                     document.body.classList.add('night-mode');
                   }
                   const condition = getWeatherCondition(conditionCode);
-
+                  console.log(condition);
 
               } else {
                   console.error("No weather data found in the response.");
@@ -90,29 +86,9 @@ async function getWeather() {
 }
 
 function getWeatherCondition(code) {
-  const conditions = {
-    0: 'Clear sky',
-    1: 'Partly cloudy',
-    2: 'Cloudy',
-    3: 'Overcast',
-    45: 'Foggy',
-    48: 'Depositing rime fog',
-    51: 'Light rain',
-    53: 'Moderate rain',
-    55: 'Heavy rain',
-    56: 'Light freezing rain',
-    57: 'Heavy freezing rain',
-    61: 'Light snow',
-    63: 'Moderate snow',
-    65: 'Heavy snow',
-    71: 'Light showers',
-    73: 'Moderate showers',
-    75: 'Heavy showers',
-    77: 'Snow showers',
-    80: 'Heavy thunderstorm',
-    81: 'Thunderstorm with hail',
-    82: 'Severe thunderstorm'
-  };
-
-  return conditions[code] || 'Unknown condition';
+  if ([0].includes(code)) return 'Sunny';
+  if ([1, 2, 3, 45, 48].includes(code)) return 'Cloudy';
+  if ([51, 53, 55, 56, 57, 61, 63, 65, 71, 73, 75, 77, 80, 81, 82].includes(code)) return 'Rainy';
+  if ([56, 57, 77].includes(code)) return 'Freezing';
+  return 'Unknown';
 }
