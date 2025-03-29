@@ -1,5 +1,6 @@
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Script from 'next/script';
 import './globals.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -25,11 +26,12 @@ export default function RootLayout({ children }) {
           </main>
           <Footer />
         </div>
-        <script
+        <Script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-pzjw8f+ua7Kw1TIq0Ywv68a4akS9ZyXtv9sMlVqtW8Fz0TZnkOWO8aDX4Xz7J9fX"
           crossOrigin="anonymous"
-        ></script>
+          strategy="beforeInteractive"  // or "afterInteractive" depending on your needs
+        />
       </body>
     </html>
   );
