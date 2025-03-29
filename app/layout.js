@@ -8,13 +8,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <title>Sarah Warren</title>
+        <title>Sarah Randolph</title>
         <link
           rel="globals"
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
           integrity="sha384-KyZXEJ03vNEXpP7I6yM5Zl6WlFa4v2+6g9K6Z3l52KNp5pPjRfJz59l/Dz9m0g7N"
           crossOrigin="anonymous"
         />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
       </head>
       <body className="background">
         <div className="container-fluid p-4">
@@ -30,7 +31,7 @@ export default function RootLayout({ children }) {
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-pzjw8f+ua7Kw1TIq0Ywv68a4akS9ZyXtv9sMlVqtW8Fz0TZnkOWO8aDX4Xz7J9fX"
           crossOrigin="anonymous"
-          strategy="beforeInteractive"  // or "afterInteractive" depending on your needs
+          strategy="beforeInteractive"
         />
       </body>
     </html>
