@@ -1,10 +1,17 @@
+'use client';
+
+import React, { useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Weather from './components/Weather';
 import Script from 'next/script';
-import './globals.css'
+import './styles/globals.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function RootLayout({ children }) {
+  useEffect(() => {
+    Weather.getWeather();
+  }, []);
   return (
     <html lang="en">
       <head>
@@ -12,7 +19,6 @@ export default function RootLayout({ children }) {
         <link
           rel="globals"
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-          integrity="sha384-KyZXEJ03vNEXpP7I6yM5Zl6WlFa4v2+6g9K6Z3l52KNp5pPjRfJz59l/Dz9m0g7N"
           crossOrigin="anonymous"
         />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
@@ -29,7 +35,6 @@ export default function RootLayout({ children }) {
         </div>
         <Script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-pzjw8f+ua7Kw1TIq0Ywv68a4akS9ZyXtv9sMlVqtW8Fz0TZnkOWO8aDX4Xz7J9fX"
           crossOrigin="anonymous"
           strategy="beforeInteractive"
         />
