@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --dark-text: #320A28; 
 }
 
 body {
@@ -12,6 +13,7 @@ body {
 .header, .footer {
   text-align: center;
   padding: 20px;
+  color: var(--dark-text);
 }
 
 .nav {
@@ -33,25 +35,63 @@ body {
 }
 
 .nav a:hover {
-  color: #320A28; 
+  color: var(--dark-text);
 }
 
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
+  justify-content: center;
   padding: 20px;
 }
 
 .project-card {
   display: block;
   text-align: center;
+  width: 300px;
+  padding: 10px;
+  background-color: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-decoration: none;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+.project-card h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--dark-text);
+  margin: 0;
+  padding-top: 10px;
+  text-transform: capitalize;
+  font-family: 'Arial', sans-serif;
 }
 
 .background{
   background-color: #f2f2fa;
 }
 
-.h3{
+.project-detail {
   text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.project-detail h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-detail p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-detail img {
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
 }
