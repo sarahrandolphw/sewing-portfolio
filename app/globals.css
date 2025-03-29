@@ -1,11 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background:#f2f2fa;
   --dark-text: #320A28; 
 }
 
+.night-mode {
+  --background: #320A28;
+  --dark-text: #f2f2fa;
+}
 body {
   font-family: Arial, sans-serif;
   color: var(--dark-text);
@@ -74,7 +77,7 @@ p, h1, h2, h3, h4, h5, h6, span, div, a {
 }
 
 .background{
-  background-color: #f2f2fa;
+  background-color: var(--background);
 }
 
 .project-detail {

@@ -1,3 +1,6 @@
+'use client';
+
+import React, { useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Script from 'next/script';
@@ -5,6 +8,9 @@ import './globals.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function RootLayout({ children }) {
+  useEffect(() => {
+    getWeather();
+  }, []);
   return (
     <html lang="en">
       <head>
@@ -36,4 +42,77 @@ export default function RootLayout({ children }) {
       </body>
     </html>
   );
+}
+
+async function getWeather() {
+  console.log("Weather function triggered.");
+  if (navigator.geolocation) {
+      console.log("Geolocation supported.");
+      navigator.geolocation.getCurrentPosition(async function (position) {
+          console.log("Geolocation successful, coordinates:", position.coords);
+          const lat = position.coords.latitude;
+          const lon = position.coords.longitude;
+
+          const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&timezone=America%2FSao_Paulo`;
+
+          try {
+              const response = await fetch(url);
+              const data = await response.json();
+              console.log("API data:", data);
+
+              if (data.current_weather) {
+                  const temperature = data.current_weather.temperature;
+                  const conditionCode = data.current_weather.weathercode;
+                  const isDay = data.current_weather.is_day;
+
+                  console.log("Temperature:", temperature);
+                  console.log("Weather condition code:", conditionCode);
+                  if (isDay){
+                    document.body.classList.remove('night-mode');
+                  } else {
+                    document.body.classList.add('night-mode');
+                  }
+                  const condition = getWeatherCondition(conditionCode);
+
+
+              } else {
+                  console.error("No weather data found in the response.");
+              }
+          } catch (e) {
+              console.error("Error fetching weather data:", e);
+          }
+      }, function(error) {
+          console.log('Geolocation error:', error);
+      });
+  } else {
+      console.log("Geolocation not supported, using default color palette");
+  }
+}
+
+function getWeatherCondition(code) {
+  const conditions = {
+    0: 'Clear sky',
+    1: 'Partly cloudy',
+    2: 'Cloudy',
+    3: 'Overcast',
+    45: 'Foggy',
+    48: 'Depositing rime fog',
+    51: 'Light rain',
+    53: 'Moderate rain',
+    55: 'Heavy rain',
+    56: 'Light freezing rain',
+    57: 'Heavy freezing rain',
+    61: 'Light snow',
+    63: 'Moderate snow',
+    65: 'Heavy snow',
+    71: 'Light showers',
+    73: 'Moderate showers',
+    75: 'Heavy showers',
+    77: 'Snow showers',
+    80: 'Heavy thunderstorm',
+    81: 'Thunderstorm with hail',
+    82: 'Severe thunderstorm'
+  };
+
+  return conditions[code] || 'Unknown condition';
 }
