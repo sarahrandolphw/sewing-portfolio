@@ -1,8 +1,8 @@
 :root {
-  --background: #FCF4D9;
-  --foreground: #f2f2fa;
+  --background: #CFE1F2;
+  --foreground: #F2F2FA;
   --background-text: #092A48;
-  --foreground-text: #DD7596;
+  --foreground-text: #4A6D89;
 }
 
 .night-mode {
@@ -13,17 +13,17 @@
 }
 
 .sunny-mode {
-  --background: #FCF4D9;
-  --foreground: #f2f2fa;
+  --background:#F2F2FA;
+  --foreground: #FCF4D9;
   --background-text: #092A48;
-  --foreground-text: #DD7596;
+  --foreground-text: #33475C;
 }
 
 .cloudy-mode {
   --background: #CFE1F2;
   --foreground: #F2F2FA;
   --background-text: #092A48;
-  --foreground-text: #729B79;
+  --foreground-text: #4A6D89;
 }
 
 .rainy-mode {
