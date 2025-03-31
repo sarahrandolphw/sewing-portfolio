@@ -1,5 +1,7 @@
 @import "tailwindcss";
 @import './colors.css';
+@import './projects.css';
+@import './placeholder.css';
 
 body {
   font-family: Arial, sans-serif;
@@ -7,6 +9,11 @@ body {
 
 h1, h2, h3, h4, h5, h6, span, div {
   color: var(--background-text);
+}
+
+.back-home-link {
+  color: var(--background-text);
+  margin-top: 10px;
 }
 
 .about-links a {
@@ -74,35 +81,6 @@ h1, h2, h3, h4, h5, h6, span, div {
   gap: 20px;
   justify-content: center;
   padding: 20px;
-}
-
-.project-card {
-  display: block;
-  text-align: center;
-  width: 300px;
-  padding: 10px;
-  background-color: var(--foreground);
-  transition: transform 0.3s, box-shadow 0.3s;
-  text-decoration: none;
-}
-
-.project-card img {
-  object-fit: cover;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-}
-
-.project-card h3 {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: var(--foreground-text);
-  margin: 0;
-  padding-top: 10px;
-  text-transform: capitalize;
-  font-family: 'Arial', sans-serif;
 }
 
 .background{

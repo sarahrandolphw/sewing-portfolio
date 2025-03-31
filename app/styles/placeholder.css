@@ -1,0 +1,31 @@
+.project-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 80vh;
+}
+
+.project-placeholder h1 {
+    font-size: 2em;
+    color: #1a2a42;
+    margin-bottom: 10px;
+}
+
+.project-placeholder p {
+    font-size: 1.2em;
+    color: #708090;
+    margin-bottom: 20px;
+}
+
+.back-home-link {
+    color: var(--background-text);
+    margin-top: 10px;
+    text-decoration: none;
+  }
+
+.back-home-link:hover{
+    color: var(--foreground-text);
+}
+  
