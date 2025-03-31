@@ -14,9 +14,9 @@
 
 .sunny-mode {
   --background:#F2F2FA;
-  --foreground: #FCF4D9;
+  --foreground: #FBFBFF;
   --background-text: #092A48;
-  --foreground-text: #33475C;
+  --foreground-text: #6C93BD;
 }
 
 .cloudy-mode {

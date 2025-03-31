@@ -5,8 +5,12 @@ export default function Header() {
     <header className="header">
       <h1>Sarah Randolph Warren</h1>
       <nav className="nav">
-        <Link href="/">PORTFOLIO</Link>
-        <Link href="/about">ABOUT</Link>
+        <Link href="/" className="nav-link">
+          PORTFOLIO
+        </Link>
+        <Link href="/about" className="nav-link">
+          ABOUT
+        </Link>
       </nav>
     </header>
   );

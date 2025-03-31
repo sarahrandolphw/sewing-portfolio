@@ -5,7 +5,17 @@ body {
   font-family: Arial, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6, span, div, a {
+h1, h2, h3, h4, h5, h6, span, div {
+  color: var(--background-text);
+}
+
+.about-links a {
+  text-decoration: none;
+  color: var(--foreground-text);
+}
+
+.about-links a:hover {
+  text-decoration: none;
   color: var(--background-text);
 }
 
@@ -18,21 +28,43 @@ h1, h2, h3, h4, h5, h6, span, div, a {
 .nav {
   display: flex;
   justify-content: center;
-  align-items: center; 
-  padding: 10px 20px;  
+  align-items: center;
+  padding: 10px 20px;
 }
 
-.nav a{
-  text-decoration: none;  
-  color: var(--background-text);         
-  font-size: 18px;          
-  font-weight: bold;      
-  padding: 10px 20px;    
-  margin: 0 15px;       
-  transition: color 0.3s, transform 0.3s; 
+.nav a {
+  text-decoration: none;
+  color: var(--background-text);
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin: 0 15px;
+  transition: color 0.3s, transform 0.3s;
 }
 
 .nav a:hover {
+  color: var(--foreground-text);
+}
+
+.nav a::selection{
+  color: var(--foreground-text);
+}
+
+.nav-link a{
+  text-decoration: none;
+  color: var(--background-text);
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin: 0 15px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.nav-link a:hover {
+  color: var(--foreground-text);
+}
+
+.nav-link a::selection {
   color: var(--foreground-text);
 }
 
