@@ -8,7 +8,7 @@ export default function ProjectGallery() {
       {projects.map((project) => (
         <Link key={project.id} href={`/projects/${project.id}`} legacyBehavior>
           <a className="project-card">
-            <Image src={project.image} alt={project.title} width={300} height={300} priority/>
+            <Image src={project.image} alt={project.title} width={400} height={500} priority/>
             <h3>{project.title}</h3>
           </a>
         </Link>
