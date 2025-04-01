@@ -10,7 +10,7 @@ const projects = [
     {
       id: "crochet-lace",
       title: "Crochet Lace",
-      description: "Hand-crocheted lace piece.",
+      description: "Hand-crocheted lace piece",
       image: "/images/lace.jpg",
       image2: "/images/lace2.jpg",
       images: ["/images/lace.jpg", "/images/lace2.jpg"],
